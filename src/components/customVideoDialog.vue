@@ -1,8 +1,8 @@
 <!--
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-24 12:19:51
- * @LastEditors: yichuanhao 1274816963@qq.com
- * @LastEditTime: 2024-03-26 21:59:39
+ * @LastEditors: yichuanhao
+ * @LastEditTime: 2024-03-27 17:14:48
  * @FilePath: \pingliangproject\src\components\customVideoDialog.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -52,36 +52,8 @@ export default {
     },
   },
   created() {
-    let codeObj = {
-      1: '/assets/video/right1.mp4',
-      2: '/assets/video/right2.mp4',
-      3: '/assets/video/left1.mp4',
-      4: '/assets/video/left2.mp4',
-      5: '/assets/video/left3.mp4',
-      6: '/assets/video/left4.mp4',
-      7: '/assets/video/right7.mp4',
-      8: '/assets/video/right8.mp4',
-      9: '/assets/video/right9.mp4',
-      10: '/assets/video/right10.mp4',
-      11: '/assets/video/right11.mp4',
-      12: '/assets/video/right12.mp4',
-      13: '/assets/video/right13.mp4',
-    };
-    let titleObj = {
-      1: '碳普惠推广',
-      2: '碳服务体验',
-      3: '无人机+网格协同',
-      4: '无人机+北斗',
-      5: '无人机+孪生电网',
-      6: '无人机+控制平台',
-      7: '配网感知能力',
-      8: '移动作业能力',
-      9: '供电服务全资源管控看板',
-      10: '设计',
-      11: '建设',
-      12: '运行',
-      13: '检修',
-    };
+    let codeObj = {};
+    let titleObj = {};
     this.title = titleObj[this.code];
     this.url = codeObj[this.code];
   },

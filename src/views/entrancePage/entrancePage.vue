@@ -2,7 +2,7 @@
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
  * @LastEditors: yichuanhao
- * @LastEditTime: 2024-03-22 17:13:17
+ * @LastEditTime: 2024-03-27 09:45:54
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -16,11 +16,11 @@
         <div class="vertical_text2">村级光伏扶贫电站<span class="vertical_text_other">3777</span>座</div>
         <div class="vertical_text3">风光·千乡万村驭风行 千家万户沐阳光</div>
         <div class="back_button jishi" @click="toRouter('/footstone')"></div>
-        <div class="back_button yidaoliang" @click="toRouter('/footstone')"></div>
+        <div class="back_button yidaoliang" @click="toRouter('/aBeam')"></div>
         <div class="back_button yimianqiang" @click="toRouter('/aWall')"></div>
-        <div class="back_button yishanchuang" @click="toRouter('/footstone')"></div>
-        <div class="back_button yishanchuang2" @click="toRouter('/footstone')"></div>
-        <div class="back_button yishuguang" @click="toRouter('/footstone')"></div>
+        <div class="back_button yishanchuang" @click="toRouter('/aWindow')"></div>
+        <div class="back_button yishanchuang2" @click="toRouter('/aWindow')"></div>
+        <div class="back_button yishuguang" @click="toRouter('/aLight')"></div>
       </div>
     </div>
   </div>
