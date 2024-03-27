@@ -1,8 +1,8 @@
 <!--
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
- * @LastEditors: yichuanhao
- * @LastEditTime: 2024-03-27 17:33:15
+ * @LastEditors: yichuanhao 1274816963@qq.com
+ * @LastEditTime: 2024-03-27 20:29:07
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -23,15 +23,10 @@
         <div class="image_box3"></div>
         <div class="image_box4"></div>
         <!-- 中间跳动的box -->
-        <div class="number_box1"></div>
-        <div class="number_box2"></div>
-        <div class="number_box3"></div>
-        <div class="number_box4"></div>
-        <!-- 中间可点击的内容 -->
-        <div class="center_box1"></div>
-        <div class="center_box2"></div>
-        <div class="center_box3"></div>
-        <div class="center_box4"></div>
+        <div class="number_box1" @click="showDialog(1)"></div>
+        <div class="number_box2" @click="showDialog(2)"></div>
+        <div class="number_box3" @click="showDialog(3)"></div>
+        <div class="number_box4" @click="showDialog(4)"></div>
         <!-- 边框 -->
         <div class="border_box1"></div>
         <div class="border_box2"></div>
@@ -41,7 +36,7 @@
         <div class="animation_box"></div>
       </div>
     </div>
-    <customImageDialog v-if="isShowDialog" :url="iamgeUrl" @closeDialog="closeDialog"> </customImageDialog>
+    <customImageDialog v-if="isShowDialog" :urlList="urlList" @closeDialog="closeDialog"> </customImageDialog>
     <customVideoDialog v-if="isShowDialog2" :code="videoCode" @closeDialog="closeDialog2"> </customVideoDialog>
   </div>
 </template>
@@ -70,7 +65,7 @@ export default {
     return {
       isShowDialog: false,
       isShowDialog2: false,
-      imageUrl: '',
+      urlList: '',
       videoCode: '',
       bigScreenStyle: null,
       changeBig: false,
@@ -224,7 +219,7 @@ export default {
           fontFamily: 'PingFangSC, PingFang SC',
           textAlign: 'left',
           color: '#FCB52B',
-          width: 323,
+          width: 350,
           left: 1089,
           top: 1111,
         },
@@ -234,7 +229,7 @@ export default {
           fontFamily: 'PingFangSC, PingFang SC',
           textAlign: 'left',
           color: '#FCB52B',
-          width: 326,
+          width: 350,
           left: 1480,
           top: 732,
         },
@@ -244,7 +239,7 @@ export default {
           fontFamily: 'PingFangSC, PingFang SC',
           textAlign: 'left',
           color: '#FCB52B',
-          width: 323,
+          width: 350,
           left: 2046,
           top: 732,
         },
@@ -254,7 +249,7 @@ export default {
           fontFamily: 'PingFangSC, PingFang SC',
           textAlign: 'left',
           color: '#FCB52B',
-          width: 323,
+          width: 350,
           left: 2429,
           top: 1111,
         },
@@ -262,12 +257,21 @@ export default {
     };
   },
   methods: {
-    showDialog() {
+    showDialog(code) {
+      if (code === 1) {
+        this.urlList = ['/assets/images/lunbo1.png', '/assets/images/lunbo2.png'];
+      } else if (code === 2) {
+        this.urlList = ['/assets/images/lunbo3.png', '/assets/images/lunbo4.png'];
+      } else if (code === 3) {
+        this.urlList = ['/assets/images/lunbo5.png'];
+      } else {
+        this.urlList = ['/assets/images/lunbo6.png'];
+      }
       this.isShowDialog = true;
     },
     closeDialog() {
       this.isShowDialog = false;
-      this.imageUrl = '';
+      this.urlList = [];
     },
     showDialog2() {
       this.isShowDialog2 = true;
@@ -380,43 +384,6 @@ export default {
       top: 664px;
       text-align: left;
     }
-    .center_box1 {
-      position: absolute;
-      width: 360px;
-      height: 400px;
-      left: 1070px;
-      top: 830px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-    .center_box2 {
-      position: absolute;
-      width: 360px;
-      height: 400px;
-      left: 1460px;
-      top: 460px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-    .center_box3 {
-      position: absolute;
-      width: 360px;
-      height: 400px;
-      left: 2020px;
-      top: 460px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-    .center_box4 {
-      position: absolute;
-      width: 360px;
-      height: 400px;
-      left: 2410px;
-      top: 830px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-
     .border_box1 {
       position: absolute;
       width: 885px;

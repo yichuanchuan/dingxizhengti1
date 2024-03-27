@@ -4,7 +4,7 @@
  * @Author: yichuanhao
  * @Date: 2023-05-29 09:20:29
  * @LastEditors: yichuanhao 1274816963@qq.com
- * @LastEditTime: 2024-03-20 21:40:09
+ * @LastEditTime: 2024-03-27 22:49:02
 -->
 <template>
   <div :id="'chart' + chartIndex" :style="transStyle"></div>
@@ -52,7 +52,7 @@ export default {
   created() {},
   mounted() {
     // 实例化饼图dom
-    this.chartDom = echarts.init(document.querySelector('#chart' + this.chartIndex));
+    this.chartDom = echarts.init(document.querySelector('#chart' + this.chartIndex), null, { renderer: 'svg' });
     //监听resize
     window.addEventListener('resize', this.changeChartSize);
   },

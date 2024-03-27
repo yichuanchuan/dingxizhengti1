@@ -2,7 +2,7 @@
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
  * @LastEditors: yichuanhao 1274816963@qq.com
- * @LastEditTime: 2024-03-26 21:55:57
+ * @LastEditTime: 2024-03-27 20:38:10
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -26,7 +26,7 @@
         <flipclock :val="50" suffix="%" class="filp4"> </flipclock>
 
         <div class="center_text" @click="goBWall">网络“智”理</div>
-        <div class="bottom_text" @click="showDialog(1)">图片展示</div>
+        <div class="bottom_text" @click="showDialog(1)">三维可视化 及智能应用</div>
       </div>
     </div>
     <customImageDialog v-if="isShowDialog" url="/assets/images/yimianqiang.png" @closeDialog="closeDialog"> </customImageDialog>
@@ -487,7 +487,7 @@ export default {
       color: #fcb52b;
       width: 288px;
       left: 1775px;
-      top: 1912px;
+      top: 1846px;
       cursor: pointer;
     }
   }

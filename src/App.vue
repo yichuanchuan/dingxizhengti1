@@ -4,7 +4,7 @@
  * @Author: yichuanhao
  * @Date: 2023-04-23 10:50:51
  * @LastEditors: yichuanhao 1274816963@qq.com
- * @LastEditTime: 2024-03-26 21:08:02
+ * @LastEditTime: 2024-03-27 21:01:23
 -->
 <template>
   <div id="app">
@@ -44,6 +44,19 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  &:hover {
+    opacity: 1;
+  }
+}
+.over_image {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   opacity: 0;
   transition: opacity 0.5s ease;
   &:hover {

@@ -2,7 +2,7 @@
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-24 12:19:51
  * @LastEditors: yichuanhao 1274816963@qq.com
- * @LastEditTime: 2024-03-26 21:57:05
+ * @LastEditTime: 2024-03-27 20:32:56
  * @FilePath: \pingliangproject\src\components\customVideoDialog.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -11,30 +11,51 @@
     <div style="transform: scale(0.5)">
       <div class="dialog_content">
         <div class="close_icon" @click="closeDialog"><i class="el-icon-close"></i></div>
-        <img :src="url" alt="" class="center_image" />
+        <div class="center_image">
+          <swiper :options="swiperOption" ref="mySwiper">
+            <swiper-slide v-for="(item, index) in urlList" :key="index">
+              <img :src="item" alt="" class="img_box" />
+            </swiper-slide>
+          </swiper>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
+import 'swiper/dist/css/swiper.css';
 export default {
-  name: 'customVideoDialog', // 视频播放组件
+  name: 'customImageDialog', // 图片轮播组件
+  components: {
+    swiper,
+    swiperSlide,
+  },
   props: {
-    url: {
-      type: String,
-      default: '',
+    urlList: {
+      type: Array,
+      default: [],
     },
   },
   data() {
     return {
-      url: '',
+      swiperOption: {
+        loop: true,
+        autoplay: false,
+        spaceBetween: 10,
+      },
     };
   },
   methods: {
     closeDialog() {
       this.$emit('closeDialog');
     },
+  },
+  created() {
+    if (this.urlList.length > 1) {
+      this.swiperOption.autoplay = { delay: 3000 };
+    }
   },
 };
 </script>
@@ -59,10 +80,13 @@ export default {
     .center_image {
       width: 2094px;
       height: 783px;
-      background: #fff;
       position: absolute;
       left: 156px;
       top: 257px;
+    }
+    .img_box {
+      width: 2094px;
+      height: 783px;
       object-fit: contain;
     }
   }
@@ -79,24 +103,6 @@ export default {
     &:hover {
       color: rgba(70, 232, 255, 1);
     }
-  }
-  .video_box {
-    width: 1466px;
-    height: 933px;
-    position: absolute;
-    top: 233px;
-    left: 283px;
-  }
-  .dialog_title {
-    font-family: alibaba;
-    font-size: 50px;
-    color: #ffffff;
-    line-height: 40px;
-    letter-spacing: 2px;
-    text-align: left;
-    position: absolute;
-    top: 30px;
-    left: 100px;
   }
 }
 </style>
