@@ -1,8 +1,8 @@
 <!--
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
- * @LastEditors: yichuanhao 1274816963@qq.com
- * @LastEditTime: 2024-03-27 20:29:07
+ * @LastEditors: yichuanhao
+ * @LastEditTime: 2024-03-28 15:11:10
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -23,15 +23,15 @@
         <div class="image_box3"></div>
         <div class="image_box4"></div>
         <!-- 中间跳动的box -->
-        <div class="number_box1" @click="showDialog(1)"></div>
+        <div class="number_box1" @click="showDialog2(4)"></div>
         <div class="number_box2" @click="showDialog(2)"></div>
         <div class="number_box3" @click="showDialog(3)"></div>
         <div class="number_box4" @click="showDialog(4)"></div>
         <!-- 边框 -->
         <div class="border_box1"></div>
         <div class="border_box2"></div>
-        <div class="border_box3"></div>
-        <div class="border_box4"></div>
+        <div class="border_box3" @click="showDialog2(2)"></div>
+        <div class="border_box4" @click="showDialog2(3)"></div>
         <!-- 旋转 -->
         <div class="animation_box"></div>
       </div>
@@ -261,11 +261,11 @@ export default {
       if (code === 1) {
         this.urlList = ['/assets/images/lunbo1.png', '/assets/images/lunbo2.png'];
       } else if (code === 2) {
-        this.urlList = ['/assets/images/lunbo3.png', '/assets/images/lunbo4.png'];
+        this.urlList = ['/assets/images/lunbo3.png', '/assets/images/lunbo4.png', '/assets/images/lunbo8.png', '/assets/images/lunbo9.png'];
       } else if (code === 3) {
-        this.urlList = ['/assets/images/lunbo5.png'];
+        this.urlList = ['/assets/images/lunbo5.png', '/assets/images/lunbo6.png'];
       } else {
-        this.urlList = ['/assets/images/lunbo6.png'];
+        this.urlList = ['/assets/images/lunbo7.png'];
       }
       this.isShowDialog = true;
     },
@@ -273,7 +273,8 @@ export default {
       this.isShowDialog = false;
       this.urlList = [];
     },
-    showDialog2() {
+    showDialog2(code) {
+      this.videoCode = code;
       this.isShowDialog2 = true;
     },
     closeDialog2() {

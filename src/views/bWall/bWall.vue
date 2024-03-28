@@ -1,8 +1,8 @@
 <!--
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
- * @LastEditors: yichuanhao 1274816963@qq.com
- * @LastEditTime: 2024-03-26 21:40:24
+ * @LastEditors: yichuanhao
+ * @LastEditTime: 2024-03-28 15:44:35
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -20,13 +20,15 @@
         <div class="img_three"></div>
         <div class="img_four"></div>
         <!-- 边框 -->
-        <div class="img_box1"></div>
-        <div class="img_box2"></div>
-        <div class="img_box3"></div>
-        <div class="img_box4"></div>
+        <div class="img_box1" @click="showDialog2(5)"></div>
+        <div class="img_box2" @click="showDialog2(6)"></div>
+        <div class="img_box3" @click="showDialog2(7)"></div>
+        <div class="img_box4" @click="showDialog"></div>
         <div class="center_text" @click="goAWall">全场景通信网络防护体系</div>
       </div>
     </div>
+    <customImageDialog v-if="isShowDialog" :urlList="urlList" @closeDialog="closeDialog"> </customImageDialog>
+    <customVideoDialog v-if="isShowDialog2" :code="videoCode" @closeDialog="closeDialog2"> </customVideoDialog>
   </div>
 </template>
 
@@ -36,6 +38,8 @@ import customText from '../../../src/components/customText.vue';
 import widgetImage from '../../../src/components/widgetImage.vue';
 import verticalText from '../../../src/components/verticalText.vue';
 import commonCharts from '../../components/commonCharts.vue';
+import customImageDialog from '../../components/customImageDialog.vue';
+import customVideoDialog from '../../components/customVideoDialog.vue';
 export default {
   name: 'bWall',
   components: {
@@ -43,9 +47,15 @@ export default {
     widgetImage,
     verticalText,
     commonCharts,
+    customImageDialog,
+    customVideoDialog,
   },
   data() {
     return {
+      isShowDialog: false,
+      isShowDialog2: false,
+      urlList: '',
+      videoCode: '',
       bigScreenStyle: null,
       changeBig: false,
       width: 3840,
@@ -95,6 +105,22 @@ export default {
     };
   },
   methods: {
+    showDialog() {
+      this.urlList = ['/assets/images/lunbo10.png'];
+      this.isShowDialog = true;
+    },
+    closeDialog() {
+      this.isShowDialog = false;
+      this.urlList = [];
+    },
+    showDialog2(code) {
+      this.videoCode = code;
+      this.isShowDialog2 = true;
+    },
+    closeDialog2() {
+      this.isShowDialog2 = false;
+      this.videoCode = '';
+    },
     goAWall() {
       this.$router.push({
         path: '/aWall',

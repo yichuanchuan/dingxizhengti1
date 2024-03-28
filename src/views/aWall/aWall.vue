@@ -1,13 +1,13 @@
 <!--
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
- * @LastEditors: yichuanhao 1274816963@qq.com
- * @LastEditTime: 2024-03-27 20:38:10
+ * @LastEditors: yichuanhao
+ * @LastEditTime: 2024-03-28 14:28:46
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-  <div class="footstone">
+  <div class="aWall">
     <div class="devopsBigScreen">
       <div :style="bigScreenStyle">
         <img src="/assets/images/back.png" alt="" class="back_image" @click="$router.back()" />
@@ -29,7 +29,7 @@
         <div class="bottom_text" @click="showDialog(1)">三维可视化 及智能应用</div>
       </div>
     </div>
-    <customImageDialog v-if="isShowDialog" url="/assets/images/yimianqiang.png" @closeDialog="closeDialog"> </customImageDialog>
+    <customVideoDialog v-if="isShowDialog" :code="1" @closeDialog="closeDialog"> </customVideoDialog>
   </div>
 </template>
 
@@ -40,16 +40,16 @@ import widgetImage from '../../../src/components/widgetImage.vue';
 import verticalText from '../../../src/components/verticalText.vue';
 import commonCharts from '../../components/commonCharts.vue';
 import flipclock from './components/flipclock.vue';
-import customImageDialog from '../../components/customImageDialog.vue';
+import customVideoDialog from '../../components/customVideoDialog.vue';
 export default {
-  name: 'footstone',
+  name: 'aWall',
   components: {
     customText,
     widgetImage,
     verticalText,
     commonCharts,
     flipclock,
-    customImageDialog,
+    customVideoDialog,
   },
   data() {
     return {
@@ -386,7 +386,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footstone {
+.aWall {
   width: 100%;
   height: 100%;
   .devopsBigScreen {
@@ -435,7 +435,7 @@ export default {
     .filp1 {
       position: absolute;
       width: 180px;
-      height: 60px;
+      height: 50px;
       left: 3060px;
       top: 364px;
       text-align: left;
@@ -443,7 +443,7 @@ export default {
     .filp2 {
       position: absolute;
       width: 180px;
-      height: 60px;
+      height: 50px;
       left: 3492px;
       top: 364px;
       text-align: left;
@@ -451,7 +451,7 @@ export default {
     .filp3 {
       position: absolute;
       width: 180px;
-      height: 60px;
+      height: 50px;
       left: 3060px;
       top: 584px;
       text-align: left;
@@ -459,7 +459,7 @@ export default {
     .filp4 {
       position: absolute;
       width: 180px;
-      height: 60px;
+      height: 50px;
       left: 3492px;
       top: 584px;
       text-align: left;
