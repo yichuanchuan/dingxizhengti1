@@ -1,8 +1,8 @@
 <!--
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
- * @LastEditors: yichuanhao 1274816963@qq.com
- * @LastEditTime: 2024-03-27 22:59:03
+ * @LastEditors: yichuanhao
+ * @LastEditTime: 2024-03-28 09:35:21
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -23,6 +23,24 @@
         <commonCharts :option="chartOption4" :chartIndex="3" :cssStyle="cssStyle4"></commonCharts>
         <!-- 饼图 -->
         <commonCharts :option="chartOption5" :chartIndex="4" :cssStyle="cssStyle5"></commonCharts>
+
+        <!-- 动态数字 -->
+        <flipclock :val="71" class="filp1"> </flipclock>
+        <flipclock :val="8" class="filp2"> </flipclock>
+        <flipclock :val="8.5" class="filp3"> </flipclock>
+        <flipclock :val="6" class="filp4"> </flipclock>
+        <flipclock :val="92" class="filp5"> </flipclock>
+        <flipclock :val="119" class="filp6"> </flipclock>
+        <flipclock :val="3" class="filp7"> </flipclock>
+        <flipclock :val="15" class="filp8"> </flipclock>
+        <flipclock :val="1.5" class="filp9"> </flipclock>
+        <flipclock :val="93" class="filp10"> </flipclock>
+        <flipclock :val="100" class="filp11"> </flipclock>
+        <!-- 中间静态图片 -->
+        <div class="center_box1"></div>
+        <div class="center_box2"></div>
+        <div class="center_box3"></div>
+        <div class="center_box4"></div>
       </div>
     </div>
     <customImageDialog v-if="isShowDialog" url="/assets/images/yimianqiang.png" @closeDialog="closeDialog"> </customImageDialog>
@@ -37,6 +55,7 @@ import widgetImage from '../../../src/components/widgetImage.vue';
 import verticalText from '../../../src/components/verticalText.vue';
 import commonCharts from '../../components/commonCharts.vue';
 import customImageDialog from '../../components/customImageDialog.vue';
+import flipclock from './components/flipclock.vue';
 export default {
   name: 'aBeam', // 一道梁
   components: {
@@ -45,6 +64,7 @@ export default {
     verticalText,
     commonCharts,
     customImageDialog,
+    flipclock,
   },
   data() {
     return {
@@ -683,6 +703,50 @@ export default {
           textAlign: 'left',
           color: '#9CBBDB',
           width: 182,
+          left: 1146,
+          top: 340,
+        },
+        {
+          text: '优化改造(项)',
+          fontSize: 32,
+          fontFamily: 'PingFangSC, PingFang SC',
+          fontWeight: 500,
+          textAlign: 'left',
+          color: '#9CBBDB',
+          width: 182,
+          left: 2555,
+          top: 340,
+        },
+        {
+          text: '开发报表(张)',
+          fontSize: 32,
+          fontFamily: 'PingFangSC, PingFang SC',
+          fontWeight: 500,
+          textAlign: 'left',
+          color: '#9CBBDB',
+          width: 182,
+          left: 1146,
+          top: 546,
+        },
+        {
+          text: '创新团队(个)',
+          fontSize: 32,
+          fontFamily: 'PingFangSC, PingFang SC',
+          fontWeight: 500,
+          textAlign: 'left',
+          color: '#9CBBDB',
+          width: 182,
+          left: 2555,
+          top: 546,
+        },
+        {
+          text: 'RPA场景(个)',
+          fontSize: 32,
+          fontFamily: 'PingFangSC, PingFang SC',
+          fontWeight: 500,
+          textAlign: 'left',
+          color: '#9CBBDB',
+          width: 182,
           left: 169,
           top: 429,
         },
@@ -696,6 +760,68 @@ export default {
           width: 182,
           left: 463,
           top: 429,
+        },
+        {
+          text: '22',
+          fontSize: 50,
+          fontFamily: 'zaozi',
+          textAlign: 'left',
+          color: '#D7E7F9',
+          width: 80,
+          left: 1193,
+          top: 402,
+        },
+        {
+          text: '32',
+          fontSize: 50,
+          fontFamily: 'zaozi',
+          textAlign: 'left',
+          color: '#D7E7F9',
+          width: 80,
+          left: 2601,
+          top: 402,
+        },
+        {
+          text: '56',
+          fontSize: 50,
+          fontFamily: 'zaozi',
+          textAlign: 'left',
+          color: '#D7E7F9',
+          width: 80,
+          left: 1189,
+          top: 608,
+        },
+        {
+          text: '56',
+          fontSize: 50,
+          fontFamily: 'zaozi',
+          textAlign: 'left',
+          color: '#D7E7F9',
+          width: 80,
+          left: 2601,
+          top: 608,
+        },
+        {
+          text: '基层“智”服务',
+          fontSize: 110,
+          fontFamily: 'PingFangSC, PingFang SC',
+          fontWeight: 600,
+          textAlign: 'left',
+          color: '#FCB52B',
+          width: 686,
+          left: 1577,
+          top: 419,
+        },
+        {
+          text: '积极开展智能报表、RPA开发应用',
+          fontSize: 48,
+          fontFamily: 'PingFangSC, PingFang SC',
+          fontWeight: 650,
+          textAlign: 'left',
+          color: '#BCE3FF',
+          width: 750,
+          left: 1560,
+          top: 573,
         },
         {
           text: '运行次数(w/次)',
@@ -855,6 +981,126 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    .filp1 {
+      position: absolute;
+      width: 80px;
+      height: 50px;
+      left: 267px;
+      top: 491px;
+      text-align: left;
+    }
+    .filp2 {
+      position: absolute;
+      width: 40px;
+      height: 50px;
+      left: 557px;
+      top: 491px;
+      text-align: left;
+    }
+    .filp3 {
+      position: absolute;
+      width: 100px;
+      height: 50px;
+      left: 835px;
+      top: 491px;
+      text-align: left;
+    }
+    .filp4 {
+      position: absolute;
+      width: 40px;
+      height: 50px;
+      left: 267px;
+      top: 652px;
+      text-align: left;
+    }
+    .filp5 {
+      position: absolute;
+      width: 93px;
+      height: 50px;
+      left: 557px;
+      top: 652px;
+      text-align: left;
+    }
+    .filp6 {
+      position: absolute;
+      width: 120px;
+      height: 50px;
+      left: 2997px;
+      top: 490px;
+      text-align: left;
+    }
+    .filp7 {
+      position: absolute;
+      width: 40px;
+      height: 50px;
+      left: 3287px;
+      top: 490px;
+      text-align: left;
+    }
+    .filp8 {
+      position: absolute;
+      width: 93px;
+      height: 50px;
+      left: 3565px;
+      top: 490px;
+      text-align: left;
+    }
+    .filp9 {
+      position: absolute;
+      width: 120px;
+      height: 50px;
+      left: 2997px;
+      top: 652px;
+      text-align: left;
+    }
+    .filp10 {
+      position: absolute;
+      width: 93px;
+      height: 50px;
+      left: 3287px;
+      top: 652px;
+      text-align: left;
+    }
+    .filp11 {
+      position: absolute;
+      width: 120px;
+      height: 50px;
+      left: 3565px;
+      top: 652px;
+      text-align: left;
+    }
+    .center_box1 {
+      position: absolute;
+      width: 349px;
+      height: 462px;
+      left: 1159px;
+      top: 890px;
+      background: url('./images/center1.png');
+    }
+    .center_box2 {
+      position: absolute;
+      width: 349px;
+      height: 462px;
+      left: 1550px;
+      top: 890px;
+      background: url('./images/center2.png');
+    }
+    .center_box3 {
+      position: absolute;
+      width: 349px;
+      height: 462px;
+      left: 1941px;
+      top: 890px;
+      background: url('./images/center3.png');
+    }
+    .center_box4 {
+      position: absolute;
+      width: 349px;
+      height: 462px;
+      left: 2332px;
+      top: 890px;
+      background: url('./images/center4.png');
+    }
   }
 }
 </style>
