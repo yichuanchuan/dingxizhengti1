@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="custom_video_dialog">
-    <div style="transform: scale(0.5)">
+    <div>
       <div class="dialog_content">
         <div class="close_icon" @click="closeDialog"><i class="el-icon-close"></i></div>
         <video id="video" width="1466" height="933" class="video_box" type="video/mp4" loop></video>

@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="custom_image_dialog">
-    <div style="transform: scale(0.5)">
+    <div>
       <div class="dialog_content">
         <div class="close_icon" @click="closeDialog"><i class="el-icon-close"></i></div>
         <div class="center_image">
