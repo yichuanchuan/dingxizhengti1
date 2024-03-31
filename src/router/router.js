@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Author: yichuanhao
  * @Date: 2024-03-21 09:14:53
- * @LastEditors: yichuanhao
- * @LastEditTime: 2024-03-27 09:42:23
+ * @LastEditors: yichuanhao 1274816963@qq.com
+ * @LastEditTime: 2024-03-31 10:33:14
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -21,7 +21,7 @@ import over from '../views/over/over.vue';
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', meta: { name: '欢迎页' }, component: Home },
+  { path: '/', meta: { name: '视频页' }, component: entrance },
   { path: '/entrancePage', meta: { name: '数说定电' }, component: entrancePage },
   { path: '/footstone', meta: { name: '基石' }, component: footstone },
   { path: '/aWall', meta: { name: '一面墙' }, component: aWall },
@@ -29,8 +29,8 @@ const routes = [
   { path: '/aBeam', meta: { name: '一道梁' }, component: aBeam },
   { path: '/aWindow', meta: { name: '一扇窗' }, component: aWindow },
   { path: '/aLight', meta: { name: '一束光' }, component: aLight },
-  { path: '/entrance', meta: { name: '视频' }, component: entrance },
-  { path: '/over', meta: { name: '视频' }, component: over },
+  { path: '/home', meta: { name: '欢迎页' }, component: Home },
+  { path: '/over', meta: { name: '结束页' }, component: over },
 ];
 
 const router = new VueRouter({

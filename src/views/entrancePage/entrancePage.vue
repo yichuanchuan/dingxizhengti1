@@ -1,8 +1,8 @@
 <!--
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
- * @LastEditors: yichuanhao
- * @LastEditTime: 2024-03-27 09:45:54
+ * @LastEditors: yichuanhao 1274816963@qq.com
+ * @LastEditTime: 2024-03-31 10:41:06
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -10,6 +10,8 @@
   <div class="entrancePage">
     <div class="devopsBigScreen">
       <div :style="bigScreenStyle">
+        <img src="assets/images/back.png" alt="" class="back_image" @click="$router.back()" />
+        <img src="assets/images/goover.png" alt="" class="over_image" @click="$router.push({ path: '/over' })" />
         <div class="vertical_text">
           <span class="vertical_text_other">“薯”</span><span class="vertical_text_other">光</span>·定西马铃薯零碳生态村落示范基地
         </div>

@@ -10,7 +10,8 @@
   <div class="aLight">
     <div class="devopsBigScreen">
       <div :style="bigScreenStyle">
-        <img src="/assets/images/back.png" alt="" class="back_image" @click="$router.back()" />
+        <img src="assets/images/back.png" alt="" class="back_image" @click="$router.back()" />
+        <img src="assets/images/goover.png" alt="" class="over_image" @click="$router.push({ path: '/over' })" />
         <!-- 静态文本 -->
         <customText v-for="(item, index) in textList" :options="item" :key="'customText' + index"></customText>
         <!-- 翻牌数字 -->
@@ -259,13 +260,13 @@ export default {
   methods: {
     showDialog(code) {
       if (code === 1) {
-        this.urlList = ['/assets/images/lunbo1.png', '/assets/images/lunbo2.png'];
+        this.urlList = ['assets/images/lunbo1.png', 'assets/images/lunbo2.png'];
       } else if (code === 2) {
-        this.urlList = ['/assets/images/lunbo3.png', '/assets/images/lunbo4.png', '/assets/images/lunbo8.png', '/assets/images/lunbo9.png'];
+        this.urlList = ['assets/images/lunbo3.png', 'assets/images/lunbo4.png', 'assets/images/lunbo8.png', 'assets/images/lunbo9.png'];
       } else if (code === 3) {
-        this.urlList = ['/assets/images/lunbo5.png', '/assets/images/lunbo6.png'];
+        this.urlList = ['assets/images/lunbo5.png', 'assets/images/lunbo6.png'];
       } else {
-        this.urlList = ['/assets/images/lunbo7.png'];
+        this.urlList = ['assets/images/lunbo7.png'];
       }
       this.isShowDialog = true;
     },

@@ -29,13 +29,13 @@ export default {
   data() {
     return {
       urlList: [
-        '/assets/images/aWindow/firstlunbo1.png',
-        '/assets/images/aWindow/firstlunbo2.png',
-        '/assets/images/aWindow/firstlunbo3.png',
-        '/assets/images/aWindow/firstlunbo4.png',
-        '/assets/images/aWindow/firstlunbo5.png',
-        '/assets/images/aWindow/firstlunbo6.png',
-        '/assets/images/aWindow/firstlunbo7.png',
+        '../assets/images/aWindow/firstlunbo1.png',
+        '../assets/images/aWindow/firstlunbo2.png',
+        '../assets/images/aWindow/firstlunbo3.png',
+        '../assets/images/aWindow/firstlunbo4.png',
+        '../assets/images/aWindow/firstlunbo5.png',
+        '../assets/images/aWindow/firstlunbo6.png',
+        '../assets/images/aWindow/firstlunbo7.png',
       ],
       swiperOption: {
         direction: 'vertical',

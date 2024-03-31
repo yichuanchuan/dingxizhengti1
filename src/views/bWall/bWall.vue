@@ -10,7 +10,8 @@
   <div class="bWall">
     <div class="devopsBigScreen">
       <div :style="bigScreenStyle">
-        <img src="/assets/images/back.png" alt="" class="back_image" @click="$router.back()" />
+        <img src="assets/images/back.png" alt="" class="back_image" @click="$router.back()" />
+        <img src="assets/images/goover.png" alt="" class="over_image" @click="$router.push({ path: '/over' })" />
         <!-- 静态文本 -->
         <customText v-for="(item, index) in textList" :options="item" :key="'customText' + index"></customText>
 
@@ -106,7 +107,7 @@ export default {
   },
   methods: {
     showDialog() {
-      this.urlList = ['/assets/images/lunbo10.png'];
+      this.urlList = ['assets/images/lunbo10.png'];
       this.isShowDialog = true;
     },
     closeDialog() {

@@ -29,11 +29,11 @@ export default {
   data() {
     return {
       urlList: [
-        '/assets/images/aWindow/secondlunbo1.png',
-        '/assets/images/aWindow/secondlunbo2.png',
-        '/assets/images/aWindow/secondlunbo3.png',
-        '/assets/images/aWindow/secondlunbo4.png',
-        '/assets/images/aWindow/secondlunbo5.png',
+        '../assets/images/aWindow/secondlunbo1.png',
+        '../assets/images/aWindow/secondlunbo2.png',
+        '../assets/images/aWindow/secondlunbo3.png',
+        '../assets/images/aWindow/secondlunbo4.png',
+        '../assets/images/aWindow/secondlunbo5.png',
       ],
       swiperOption: {
         slidesPerView: 3,

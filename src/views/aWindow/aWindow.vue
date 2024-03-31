@@ -1,8 +1,8 @@
 <!--
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
- * @LastEditors: yichuanhao
- * @LastEditTime: 2024-03-28 11:25:00
+ * @LastEditors: yichuanhao 1274816963@qq.com
+ * @LastEditTime: 2024-03-29 10:25:32
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -10,7 +10,8 @@
   <div class="aWindow">
     <div class="devopsBigScreen">
       <div :style="bigScreenStyle">
-        <img src="/assets/images/back.png" alt="" class="back_image" @click="$router.back()" />
+        <img src="assets/images/back.png" alt="" class="back_image" @click="$router.back()" />
+        <img src="assets/images/goover.png" alt="" class="over_image" @click="$router.push({ path: '/over' })" />
         <!-- 静态文本 -->
         <customText v-for="(item, index) in textList" :options="item" :key="'customText' + index"></customText>
         <!-- 旋转 -->
@@ -32,7 +33,7 @@
         <swiperBox5></swiperBox5>
       </div>
     </div>
-    <customImageDialog v-if="isShowDialog" url="/assets/images/yimianqiang.png" @closeDialog="closeDialog"> </customImageDialog>
+    <customImageDialog v-if="isShowDialog" url="assets/images/yimianqiang.png" @closeDialog="closeDialog"> </customImageDialog>
   </div>
 </template>
 
@@ -80,7 +81,7 @@ export default {
           fontWeight: 600,
           textAlign: 'left',
           color: '#FCB52B',
-          width: 576,
+          width: 666,
           left: 1631,
           top: 412,
         },

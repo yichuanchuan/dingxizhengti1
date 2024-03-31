@@ -1,8 +1,8 @@
 <!--
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
- * @LastEditors: yichuanhao
- * @LastEditTime: 2024-03-28 14:47:52
+ * @LastEditors: yichuanhao 1274816963@qq.com
+ * @LastEditTime: 2024-03-31 10:38:40
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -10,7 +10,8 @@
   <div class="aBeam">
     <div class="devopsBigScreen">
       <div :style="bigScreenStyle">
-        <img src="/assets/images/back.png" alt="" class="back_image" @click="$router.back()" />
+        <img src="assets/images/back.png" alt="" class="back_image" @click="$router.back()" />
+        <img src="assets/images/goover.png" alt="" class="over_image" @click="$router.push({ path: '/over' })" />
         <!-- 静态文本 -->
         <customText v-for="(item, index) in textList" :options="item" :key="'customText' + index"></customText>
         <!-- 柱状图 -->
@@ -42,14 +43,15 @@
         <div class="center_box3"></div>
         <div class="center_box4"></div>
         <!-- 视频 -->
-        <video id="beamvideo" src="/assets/video/jituanhudianfei.mp4" width="835" height="525" class="play_box" type="video/mp4" loop></video>
+        <video id="beamvideo" src="assets/video/jituanhudianfei.mp4" width="835" height="525" class="play_box" type="video/mp4" loop></video>
         <div class="btn_content" @click="playVideo">
           <div class="play_btn" v-if="!isPlay"></div>
           <div class="stop_btn" v-if="isPlay"></div>
         </div>
       </div>
     </div>
-    <customImageDialog v-if="isShowDialog" url="/assets/images/yimianqiang.png" @closeDialog="closeDialog"> </customImageDialog>
+    <customImageDialog v-if="isShowDialog" url="assets/images/yimianqiang.png" @closeDialog="closeDialog"> </customImageDialog>
+    <customVideoDialog v-if="isShowDialog2" :code="8" @closeDialog="closeDialog2"> </customVideoDialog>
   </div>
 </template>
 
@@ -62,6 +64,7 @@ import verticalText from '../../../src/components/verticalText.vue';
 import commonCharts from '../../components/commonCharts.vue';
 import customImageDialog from '../../components/customImageDialog.vue';
 import flipclock from './components/flipclock.vue';
+import customVideoDialog from '../../components/customVideoDialog.vue';
 export default {
   name: 'aBeam', // 一道梁
   components: {
@@ -71,9 +74,11 @@ export default {
     commonCharts,
     customImageDialog,
     flipclock,
+    customVideoDialog,
   },
   data() {
     return {
+      isShowDialog2: false,
       isPlay: false,
       isShowDialog: false,
       bigScreenStyle: null,
@@ -815,7 +820,7 @@ export default {
           fontWeight: 600,
           textAlign: 'left',
           color: '#FCB52B',
-          width: 686,
+          width: 806,
           left: 1577,
           top: 419,
         },
@@ -934,14 +939,11 @@ export default {
     };
   },
   methods: {
+    closeDialog2() {
+      this.isShowDialog2 = false;
+    },
     playVideo() {
-      if (!this.isPlay) {
-        this.isPlay = true;
-        document.getElementById('beamvideo').play();
-      } else {
-        this.isPlay = false;
-        document.getElementById('beamvideo').pause();
-      }
+      this.isShowDialog2 = true;
     },
     showDialog() {
       this.isShowDialog = true;
