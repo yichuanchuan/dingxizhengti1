@@ -17,6 +17,7 @@ import aBeam from '../views/aBeam/aBeam.vue';
 import aWindow from '../views/aWindow/aWindow.vue';
 import aLight from '../views/aLight/aLight.vue';
 import entrance from '../views/entrance/entrance.vue';
+import over from '../views/over/over.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -29,6 +30,7 @@ const routes = [
   { path: '/aWindow', meta: { name: '一扇窗' }, component: aWindow },
   { path: '/aLight', meta: { name: '一束光' }, component: aLight },
   { path: '/entrance', meta: { name: '视频' }, component: entrance },
+  { path: '/over', meta: { name: '视频' }, component: over },
 ];
 
 const router = new VueRouter({
