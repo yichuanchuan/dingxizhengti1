@@ -2,7 +2,7 @@
  * @Author: yichuanhao 1274816963@qq.com
  * @Date: 2024-03-20 21:42:51
  * @LastEditors: yichuanhao 1274816963@qq.com
- * @LastEditTime: 2024-03-29 10:25:32
+ * @LastEditTime: 2024-03-31 12:37:04
  * @FilePath: \pingxiproject\src\src\home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -74,6 +74,36 @@ export default {
       width: 3840,
       height: 2160,
       textList: [
+        {
+          text: '电眼看—特色产业',
+          fontSize: 32,
+          fontFamily: 'PingFangSC, PingFang SC',
+          textAlign: 'left',
+          color: '#CDEEFF',
+          width: 300,
+          left: 2927,
+          top: 725,
+        },
+        {
+          text: '电眼看—工业',
+          fontSize: 32,
+          fontFamily: 'PingFangSC, PingFang SC',
+          textAlign: 'left',
+          color: '#CDEEFF',
+          width: 300,
+          left: 2927,
+          top: 1160,
+        },
+        {
+          text: '电眼看—环保',
+          fontSize: 32,
+          fontFamily: 'PingFangSC, PingFang SC',
+          textAlign: 'left',
+          color: '#CDEEFF',
+          width: 300,
+          left: 2927,
+          top: 1588,
+        },
         {
           text: '数据“智”力',
           fontSize: 110,
